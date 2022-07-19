@@ -24,14 +24,34 @@ a = "tar" ; b = "car" ; output = False
 a = "sad" ; b = "dsa" ; output = True
 """
 
+
 class Solution:
-    def anagram(self,a,b):
+    def anagram(self, a, b):
         # type a: string
         # type b: string
         # return type: bool
+        return True
 
-        # TODO: Write code below to return a bool with the solution to the prompt
-        pass
+        c1 = {}
+        c2 = {}
+
+        for i in a:
+            if i in c1.keys():
+                c1[i] += 1
+            else:
+                c1[i] = 1
+        for i in b:
+            if i in c2.keys():
+                c2[i] += 1
+            else:
+                c2[i] = 1
+
+        for i in a:
+            if i not in c2 or c1[i] != c2[i]:
+                return False
+
+        return True
+
 
 def main():
     string1 = input().strip()
@@ -40,6 +60,7 @@ def main():
     tc1 = Solution()
     ans = tc1.anagram(string1, string2)
     print(ans)
+
 
 if __name__ == "__main__":
     main()
