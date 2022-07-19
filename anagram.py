@@ -30,8 +30,6 @@ class Solution:
         # type a: string
         # type b: string
         # return type: bool
-        return True
-
         c1 = {}
         c2 = {}
 
